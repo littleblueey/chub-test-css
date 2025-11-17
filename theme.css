@@ -170,7 +170,7 @@ button.ant-btn:has(.anticon-star):hover {
 header .ant-menu-overflow-item a[href="/"] {
     display: flex !important;
     align-items: center !important;
-    height: 100%;
+    gap: 8px;
 }
 
 header .ant-menu-overflow-item a[href="/"] > * {
@@ -178,8 +178,8 @@ header .ant-menu-overflow-item a[href="/"] > * {
 }
 
 header .ant-menu-overflow-item a[href="/"]::before {
-    content: '👁️';
-    font-size: 32px;
+    content: '⛧';
+    font-size: 16px;
     line-height: 1;
     animation: cult-pulse 4s ease-in-out infinite;
     transition: transform 0.3s ease;
