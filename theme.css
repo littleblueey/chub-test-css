@@ -1,4 +1,4 @@
-div[class*="character-profile__main"] h1.ant-typography {
+.ant-row[class*="character-profile"] h1 {
   display: none !important;
 }
 
