@@ -3,7 +3,7 @@ h1.ant-typography[class*="css-"] {
 }
 
 :root {
-  --glitch-image-url: url('URL_TO_YOUR_GLITCHED_IMAGE_HERE');
+  --glitch-image-url: url('https://i.imgur.com/M1pcXto.png');
 }
 
 .ant-col.text-left {
@@ -179,7 +179,7 @@ header .ant-menu-overflow-item a[href="/"] > * {
 
 header .ant-menu-overflow-item a[href="/"]::before {
   content: '⛧';
-  font-size: 34px;
+  font-size: 36px;
   line-height: 2.1;
   animation: cult-pulse 4s ease-in-out infinite;
   transition: transform 0.3s ease;
