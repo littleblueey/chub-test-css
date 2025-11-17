@@ -1,13 +1,13 @@
-.ant-col.text-left {
-  display: none !important;
-}
-
 div[class*="character-profile__main"] h1.ant-typography {
   display: none !important;
 }
 
 :root {
   --glitch-image-url: url('https://i.imgur.com/M1pcXto.png');
+}
+
+.ant-col.text-left {
+  position: relative !important;
 }
 
 @keyframes cult-pulse {
