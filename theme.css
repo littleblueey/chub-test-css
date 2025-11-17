@@ -180,7 +180,7 @@ header .ant-menu-overflow-item a[href="/"] > * {
 header .ant-menu-overflow-item a[href="/"]::before {
     content: '⛧';
     font-size: 34px;
-    line-height: 3.3;
+    line-height: 2.4;
     animation: cult-pulse 4s ease-in-out infinite;
     transition: transform 0.3s ease;
 }
