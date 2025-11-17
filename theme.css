@@ -2,6 +2,10 @@ h1.ant-typography[class*="css-"] {
   display: none !important;
 }
 
+:root {
+  --glitch-image-url: url('https://i.imgur.com/M1pcXto.png');
+}
+
 .ant-col.text-left {
   position: relative !important;
 }
@@ -19,6 +23,18 @@ h1.ant-typography[class*="css-"] {
   }
 }
 
+@keyframes dynamic-glitch {
+  0%, 100% { clip-path: inset(50% 0 50% 0); }
+  5% { clip-path: inset(10% 0 85% 0); transform: translate(-8px, -4px); }
+  10% { clip-path: inset(90% 0 5% 0); transform: translate(8px, 4px); }
+  15% { clip-path: inset(30% 0 60% 0); transform: translate(-4px, 0); }
+  20% { clip-path: inset(50% 0 50% 0); }
+  25% { clip-path: inset(2% 0 90% 0); transform: translate(4px, 4px); }
+  30% { clip-path: inset(75% 0 5% 0); transform: translate(-8px, -4px); }
+  35% { clip-path: inset(60% 0 30% 0); transform: translate(4px, 0); }
+  40% { clip-path: inset(50% 0 50% 0); }
+}
+
 .ant-col.text-left > .ant-ribbon-wrapper > .ant-image {
   width: 350px !important;
   height: 350px !important;
@@ -32,6 +48,31 @@ h1.ant-typography[class*="css-"] {
   display: block !important;
 }
 
+.ant-col.text-left > .ant-ribbon-wrapper > .ant-image::before,
+.ant-col.text-left > .ant-ribbon-wrapper > .ant-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: var(--glitch-image-url);
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.ant-col.text-left > .ant-ribbon-wrapper > .ant-image::before {
+  animation: dynamic-glitch 3s infinite steps(1, end);
+}
+
+.ant-col.text-left > .ant-ribbon-wrapper > .ant-image::after {
+  animation: dynamic-glitch 2.2s infinite steps(1, end) reverse;
+  animation-delay: 0.3s;
+}
+
 .ant-col.text-left > .ant-ribbon-wrapper > .ant-image .ant-image-img {
   width: 100% !important;
   height: 100% !important;
@@ -39,7 +80,7 @@ h1.ant-typography[class*="css-"] {
   border-radius: 15px !important;
 }
 
-.ant-col.text-left > .ant-ribbon-wrapper > .ant-image::after {
+.ant-col.text-left > .ant-ribbon-wrapper > .ant-image > .ant-image-img::after {
   content: '';
   position: absolute;
   top: 0;
@@ -100,7 +141,7 @@ button.ant-btn:has(svg.lucide-messages-square):hover {
 
 .ant-space.ant-space-horizontal.ant-space-align-center {
   position: relative !important;
-  padding-top: 60px !important; 
+  padding-top: 60px !important;
 }
 
 button.ant-btn:has(.anticon-star) {
@@ -121,32 +162,32 @@ button.ant-btn:has(.anticon-star) {
 }
 
 button.ant-btn:has(.anticon-star):hover {
-    transform: translate(-2px, -2px) !important;
-    box-shadow: 4px 4px 0px #ff0000, -4px -4px 0px #00ffff !important;
+  transform: translate(-2px, -2px) !important;
+  box-shadow: 4px 4px 0px #ff0000, -4px -4px 0px #00ffff !important;
 }
 
 header .ant-menu-overflow-item a[href="/"] {
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px;
 }
 
 header .ant-menu-overflow-item a[href="/"] > * {
-    display: none !important;
+  display: none !important;
 }
 
 header .ant-menu-overflow-item a[href="/"]::before {
-    content: '⛧';
-    font-size: 34px;
-    line-height: 2.1;
-    animation: cult-pulse 4s ease-in-out infinite;
-    transition: transform 0.3s ease;
+  content: '⛧';
+  font-size: 34px;
+  line-height: 2.1;
+  animation: cult-pulse 4s ease-in-out infinite;
+  transition: transform 0.3s ease;
 }
 
 header .ant-menu-overflow-item a[href="/"]:hover::before {
-    transform: scale(1.2) rotate(15deg);
+  transform: scale(1.2) rotate(15deg);
 }
 
 header.ant-layout-header .ant-menu-item[data-menu-id*="-home"] {
-    padding: 8px 15px !important;
+  padding: 8px 15px !important;
 }
