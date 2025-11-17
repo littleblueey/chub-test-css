@@ -179,16 +179,12 @@ header .ant-menu-overflow-item a[href="/"] > * {
 
 header .ant-menu-overflow-item a[href="/"]::before {
     content: '⛧';
-    font-size: 24px;
-    line-height: 3;
+    font-size: 34px;
+    line-height: 2.7;
     animation: cult-pulse 4s ease-in-out infinite;
     transition: transform 0.3s ease;
 }
 
 header .ant-menu-overflow-item a[href="/"]:hover::before {
     transform: scale(1.2) rotate(15deg);
-}
-
-header.ant-layout-header .ant-menu-item[data-menu-id*="-home"] {
-    padding: 8px 15px !important;
 }
