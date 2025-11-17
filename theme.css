@@ -188,3 +188,7 @@ header .ant-menu-overflow-item a[href="/"]::before {
 header .ant-menu-overflow-item a[href="/"]:hover::before {
     transform: scale(1.2) rotate(15deg);
 }
+
+header.ant-layout-header .ant-menu-item[data-menu-id*="-home"] {
+    padding: 8px 15px !important;
+}
