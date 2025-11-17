@@ -68,7 +68,7 @@ h3.ant-typography {
   background-size: cover;
   background-position: 50% 25% !important;
   border-radius: 15px;
-  z-index: 3;
+  z-index: 1;
   pointer-events: none;
 }
 
