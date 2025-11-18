@@ -138,31 +138,66 @@ header .ant-menu-overflow-item a[href="/"] > * {
   display: none !important;
 }
 
-header .ant-menu-overflow-item a[href="/"]::before {
+header .ant-menu-overflow-item a[href="/"]::before,
+header .ant-menu-overflow-item a[href="/"]::after {
   content: '▸';
   font-family: 'Courier New', Courier, monospace;
   font-size: 48px;
   line-height: 1.6;
-  color: #00ff00;
-  position: relative;
-  display: inline-block;
-  animation: security-flicker 2s linear infinite;
-  overflow: hidden;
-  text-shadow: 0 0 5px #00ff00, 0 0 8px #00ff00;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000;
 }
 
-@keyframes security-flicker {
+header .ant-menu-overflow-item a[href="/"]::before {
+  color: #9e2b25;
+  text-shadow: 0 0 5px #9e2b25;
+  animation: vhs-flicker 3s infinite steps(1);
+}
+
+header .ant-menu-overflow-item a[href="/"]::after {
+  color: transparent;
+  text-shadow: -1px 0 #ff3b30, 1px 0 #3c00ff;
+  animation: vhs-glitch 3s infinite steps(1);
+}
+
+@keyframes vhs-flicker {
   0%, 100% {
     opacity: 1;
   }
-  48% {
+  50.2% {
+    opacity: 0.5;
+  }
+  50.6% {
     opacity: 1;
   }
-  50% {
-    opacity: 0.6;
+}
+
+@keyframes vhs-glitch {
+  0% {
+    clip-path: inset(86% 0 10% 0);
+    transform: translate(0, 0);
   }
-  52% {
-    opacity: 1;
+  5% {
+    clip-path: inset(55% 0 1% 0);
+    transform: translate(-2px, 2px);
+  }
+  10% {
+    clip-path: inset(86% 0 10% 0);
+    transform: translate(0, -2px);
+  }
+  15% {
+    clip-path: inset(4% 0 77% 0);
+    transform: translate(3px, 0);
+  }
+  20% {
+    clip-path: inset(90% 0 2% 0);
+    transform: translate(-5px, 0);
+  }
+  25%, 100% {
+    clip-path: inset(50% 0 50% 0);
+    transform: translate(0, 0);
   }
 }
 
