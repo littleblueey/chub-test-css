@@ -139,7 +139,7 @@ header .ant-menu-overflow-item a[href="/"] > * {
 }
 
 header .ant-menu-overflow-item a[href="/"]::before {
-  content: '📹';
+  content: '▸';
   font-size: 36px;
   line-height: 2.1;
   animation: vhs-flicker 1.5s linear infinite;
