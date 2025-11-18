@@ -149,8 +149,8 @@ header .ant-menu-overflow-item a[href="/"]::after {
   font-size: 48px;
   line-height: 1.6;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -5px;
+  left: -3px;
 }
 
 header .ant-menu-overflow-item a[href="/"]::before {
