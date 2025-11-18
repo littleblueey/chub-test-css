@@ -142,6 +142,11 @@ header .ant-menu-overflow-item a[href="/"] {
   position: relative;
 }
 
+header .ant-menu-overflow-item a[href="/"] {
+  position: relative;
+  display: inline-block;
+}
+
 header .ant-menu-overflow-item a[href="/"]::before,
 header .ant-menu-overflow-item a[href="/"]::after {
   content: '▸';
@@ -149,58 +154,113 @@ header .ant-menu-overflow-item a[href="/"]::after {
   font-size: 48px;
   line-height: 1.6;
   position: absolute;
-  top: -5px;
-  left: -3px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 header .ant-menu-overflow-item a[href="/"]::before {
   color: #9e2b25;
-  text-shadow: 0 0 5px #9e2b25;
-  animation: vhs-flicker 3s infinite steps(1);
+  text-shadow: 
+    -2px 0 #ff0000,
+    2px 0 #00ffff,
+    0 0 8px #9e2b25,
+    0 0 15px rgba(158, 43, 37, 0.5);
+  animation: vhs-glitch-full 0.3s infinite;
+  clip-path: inset(0 0 0 0);
 }
 
 header .ant-menu-overflow-item a[href="/"]::after {
-  color: transparent;
-  text-shadow: -1px 0 #ff3b30, 1px 0 #3c00ff;
-  animation: vhs-glitch 3s infinite steps(1);
+  color: #9e2b25;
+  text-shadow: 
+    -3px 0 #ff3b30, 
+    3px 0 #00ff88;
+  animation: vhs-chromatic 0.4s infinite alternate;
+  opacity: 0.8;
+}
+
+/* VHS scan lines overlay */
+header .ant-menu-overflow-item a[href="/"] {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 2px
+  );
+  animation: vhs-flicker 0.15s infinite steps(2);
+}
+
+@keyframes vhs-glitch-full {
+  0% {
+    clip-path: inset(40% 0 30% 0);
+    transform: translate(-3px, 2px);
+  }
+  10% {
+    clip-path: inset(15% 0 55% 0);
+    transform: translate(2px, -1px);
+  }
+  20% {
+    clip-path: inset(70% 0 10% 0);
+    transform: translate(-2px, 3px);
+  }
+  30% {
+    clip-path: inset(5% 0 80% 0);
+    transform: translate(4px, -2px);
+  }
+  40% {
+    clip-path: inset(60% 0 20% 0);
+    transform: translate(-4px, 1px);
+  }
+  50% {
+    clip-path: inset(25% 0 50% 0);
+    transform: translate(3px, 2px);
+  }
+  60% {
+    clip-path: inset(85% 0 5% 0);
+    transform: translate(-1px, -3px);
+  }
+  70% {
+    clip-path: inset(10% 0 70% 0);
+    transform: translate(2px, 3px);
+  }
+  80% {
+    clip-path: inset(45% 0 35% 0);
+    transform: translate(-3px, -1px);
+  }
+  90% {
+    clip-path: inset(75% 0 15% 0);
+    transform: translate(1px, 2px);
+  }
+  100% {
+    clip-path: inset(30% 0 45% 0);
+    transform: translate(2px, -2px);
+  }
+}
+
+@keyframes vhs-chromatic {
+  0% {
+    transform: translate(-2px, 0);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(2px, 0);
+    opacity: 0.9;
+  }
 }
 
 @keyframes vhs-flicker {
-  0%, 100% {
-    opacity: 1;
-  }
-  50.2% {
-    opacity: 0.5;
-  }
-  50.6% {
-    opacity: 1;
-  }
-}
-
-@keyframes vhs-glitch {
   0% {
-    clip-path: inset(86% 0 10% 0);
-    transform: translate(0, 0);
+    opacity: 0.95;
+    filter: brightness(1) contrast(1.1);
   }
-  5% {
-    clip-path: inset(55% 0 1% 0);
-    transform: translate(-2px, 2px);
+  50% {
+    opacity: 1;
+    filter: brightness(1.05) contrast(1);
   }
-  10% {
-    clip-path: inset(86% 0 10% 0);
-    transform: translate(0, -2px);
-  }
-  15% {
-    clip-path: inset(4% 0 77% 0);
-    transform: translate(3px, 0);
-  }
-  20% {
-    clip-path: inset(90% 0 2% 0);
-    transform: translate(-5px, 0);
-  }
-  25%, 100% {
-    clip-path: inset(50% 0 50% 0);
-    transform: translate(0, 0);
+  100% {
+    opacity: 0.97;
+    filter: brightness(0.98) contrast(1.05);
   }
 }
 
