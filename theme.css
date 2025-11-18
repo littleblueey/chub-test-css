@@ -1,54 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
-h3.ant-typography {
+h3.ant-typography{
   display: none !important;
 }
 
-.rubik-glitch-regular {
-  font-family: "Rubik Glitch", system-ui;
+.vt323-regular {
+  font-family: "VT323", monospace;
   font-weight: 400;
   font-style: normal;
-}
-
-:root {
-  --glitch-image-url: url('https://i.imgur.com/M1pcXto.png');
 }
 
 .ant-col.text-left {
   position: relative !important;
 }
 
-@keyframes cult-pulse {
-  0%, 100% {
-    color: #00ffff;
-    text-shadow: 1px 1px 0px #ff0000, -1px -1px 0px #00ffff, 0 0 5px rgba(0, 255, 255, 0.7);
-    transform: scale(1);
-  }
-  50% {
-    color: #ff0000;
-    text-shadow: 1px 1px 0px #00ffff, -1px -1px 0px #ff0000, 0 0 15px rgba(255, 0, 0, 0.9);
-    transform: scale(1.1);
-  }
-}
-
-@keyframes dynamic-glitch {
-  0%, 100% { clip-path: inset(50% 0 50% 0); }
-  5% { clip-path: inset(10% 0 85% 0); transform: translate(-8px, -4px); }
-  10% { clip-path: inset(90% 0 5% 0); transform: translate(8px, 4px); }
-  15% { clip-path: inset(30% 0 60% 0); transform: translate(-4px, 0); }
-  20% { clip-path: inset(50% 0 50% 0); }
-  25% { clip-path: inset(2% 0 90% 0); transform: translate(4px, 4px); }
-  30% { clip-path: inset(75% 0 5% 0); transform: translate(-8px, -4px); }
-  35% { clip-path: inset(60% 0 30% 0); transform: translate(4px, 0); }
-  40% { clip-path: inset(50% 0 50% 0); }
-}
-
 .ant-col.text-left > .ant-ribbon-wrapper > .ant-image {
   width: 350px !important;
   height: 350px !important;
   border-radius: 15px !important;
-  border: 2px solid rgba(0, 255, 255, 0.2) !important;
-  box-shadow: 0 5px 30px rgba(0, 255, 255, 0.2), 3px 3px 0px #ff0000, -3px -3px 0px #00ffff !important;
+  border: 2px solid rgba(52, 224, 161, 0.2) !important;
+  box-shadow: 0 5px 30px rgba(52, 224, 161, 0.1) !important;
   max-width: 100%;
   overflow: hidden !important;
   position: relative !important;
@@ -56,40 +27,14 @@ h3.ant-typography {
   display: block !important;
 }
 
-.ant-col.text-left > .ant-ribbon-wrapper > .ant-image::before,
-.ant-col.text-left > .ant-ribbon-wrapper > .ant-image::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: var(--glitch-image-url);
-  background-size: cover;
-  background-position: 50% 25% !important;
-  border-radius: 15px;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.ant-col.text-left > .ant-ribbon-wrapper > .ant-image::before {
-  animation: dynamic-glitch 3s infinite steps(1, end);
-}
-
-.ant-col.text-left > .ant-ribbon-wrapper > .ant-image::after {
-  animation: dynamic-glitch 2.2s infinite steps(1, end) reverse;
-  animation-delay: 0.3s;
-}
-
 .ant-col.text-left > .ant-ribbon-wrapper > .ant-image .ant-image-img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
-  object-position: 50% 25% !important;
   border-radius: 15px !important;
 }
 
-.ant-col.text-left > .ant-ribbon-wrapper > .ant-image > .ant-image-img::after {
+.ant-col.text-left > .ant-ribbon-wrapper > .ant-image::after {
   content: '';
   position: absolute;
   top: 0;
@@ -102,25 +47,33 @@ h3.ant-typography {
   z-index: 1;
 }
 
+.ant-col.text-left > .ant-ribbon-wrapper > .ant-image .ant-image-mask {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  opacity: 0 !important;
+  transition: opacity 0.3s ease-in-out !important;
+}
+
+.ant-col.text-left > .ant-ribbon-wrapper > .ant-image:hover .ant-image-mask {
+  opacity: 1 !important;
+}
+
 button.ant-btn.ant-btn-default,
 button.ant-btn-default,
 .ant-btn-default,
 button.ant-btn:not(.ant-btn-primary):not([class*="primary"]) {
   background: transparent !important;
-  color: #00ffff !important;
-  border: 1px solid rgba(0, 255, 255, 0.3) !important;
+  color: #34e0a1 !important;
+  border: 1px solid rgba(52, 224, 161, 0.3) !important;
   box-shadow: none !important;
-  font-weight: 700 !important;
-  text-shadow: 1px 1px 0px #ff0000, -1px -1px 0px #00ffff;
 }
 
 button.ant-btn.ant-btn-default:hover,
 button.ant-btn-default:hover,
 .ant-btn-default:hover,
 button.ant-btn:not(.ant-btn-primary):not([class*="primary"]):hover {
-  background: rgba(0, 255, 255, 0.1) !important;
-  border-color: #00ffff !important;
-  color: #00ffff !important;
+  background: rgba(52, 224, 161, 0.1) !important;
+  border-color: #34e0a1 !important;
+  color: #34e0a1 !important;
   transform: translateY(-1px) !important;
 }
 
@@ -131,26 +84,26 @@ button.ant-btn:has(svg.lucide-messages-square) {
   height: 64px !important;
   padding: 0 1.8em !important;
   border-radius: 10px !important;
-  background: #b30000 !important;
-  border: 2px solid rgba(255, 0, 0, 0.5) !important;
+  background: #9e2b25 !important;
+  border: 2px solid rgba(158, 43, 37, 0.5) !important;
   outline: 1px solid #000000 !important;
-  box-shadow: 2px 2px 0px #00ffff, -2px -2px 0px #ff0000, 0 0 25px rgba(255, 0, 0, 0.6), 0 4px 12px rgba(0, 0, 0, 0.6) !important;
-  text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.6), 1.5px 1.5px 0 #ff0000, -1.5px -1.5px 0 #00ffff !important;
+  box-shadow: 0 0 15px rgba(158, 43, 37, 0.4), 0 4px 12px rgba(0, 0, 0, 0.6) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6) !important;
   position: relative !important;
   overflow: hidden !important;
 }
 
 button.ant-btn:has(svg.lucide-messages-square):hover {
-  background: #d11a1a !important;
-  border-color: #ff0000 !important;
-  box-shadow: 2px 2px 0px #00ffff, -2px -2px 0px #ff0000, 0 0 35px rgba(255, 0, 0, 0.8), 0 6px 16px rgba(0, 0, 0, 0.7) !important;
+  background: #b03a32 !important;
+  border-color: #9e2b25 !important;
+  box-shadow: 0 0 25px rgba(158, 43, 37, 0.7), 0 6px 16px rgba(0, 0, 0, 0.7) !important;
   transform: translateY(-2px) !important;
   filter: brightness(1.2) !important;
 }
 
 .ant-space.ant-space-horizontal.ant-space-align-center {
   position: relative !important;
-  padding-top: 60px !important;
+  padding-top: 60px !important; 
 }
 
 button.ant-btn:has(.anticon-star) {
@@ -159,20 +112,20 @@ button.ant-btn:has(.anticon-star) {
   right: 5px !important;
   z-index: 10 !important;
   background: #11181f !important;
-  border: 2px solid rgba(0, 255, 255, 0.3) !important;
+  border: 2px solid rgba(52, 224, 161, 0.3) !important;
   border-radius: 8px !important;
   width: auto !important;
   height: auto !important;
   padding: 8px 12px !important;
   font-size: 20px !important;
-  color: #00ffff !important;
+  color: #34e0a1 !important;
   transition: all 0.2s ease !important;
-  box-shadow: 2px 2px 0px #ff0000, -2px -2px 0px #00ffff !important;
+  box-shadow: 2px 2px 0px #0a0f14 !important;
 }
 
 button.ant-btn:has(.anticon-star):hover {
   transform: translate(-2px, -2px) !important;
-  box-shadow: 4px 4px 0px #ff0000, -4px -4px 0px #00ffff !important;
+  box-shadow: 4px 4px 0px #0a0f14 !important;
 }
 
 header .ant-menu-overflow-item a[href="/"] {
@@ -186,11 +139,21 @@ header .ant-menu-overflow-item a[href="/"] > * {
 }
 
 header .ant-menu-overflow-item a[href="/"]::before {
-  content: '⛧';
+  content: '📹';
   font-size: 36px;
   line-height: 2.1;
-  animation: cult-pulse 4s ease-in-out infinite;
+  color: #ff0000;
+  animation: rec-blink 1s ease-in-out infinite;
   transition: transform 0.3s ease;
+}
+
+@keyframes rec-blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
 }
 
 header .ant-menu-overflow-item a[href="/"]:hover::before {
@@ -199,4 +162,52 @@ header .ant-menu-overflow-item a[href="/"]:hover::before {
 
 header.ant-layout-header .ant-menu-item[data-menu-id*="-home"] {
   padding: 8px 15px !important;
+}
+
+.ant-col.text-left {
+  position: relative !important;
+}
+
+.ant-col.text-left > div[style*="display: flex"][style*="flex-wrap: wrap"][style*="gap: 8px"] {
+  position: absolute !important;
+  top: 134px !important;  
+  left: 0 !important;
+  z-index: 9 !important;
+}
+
+.ant-col.text-left > .mt-2 {
+  padding-top: 50px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.ant-col.text-left > .mt-2 > div:has(h1.naomi-title) {
+  order: 1 !important;
+    margin-bottom: 80px !important;
+    margin-top: -70px !important;
+}
+
+.ant-col.text-left > .mt-2 > .sc-beySPh:first-child {
+  position: absolute !important;
+  top: 158px !important;  
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 8 !important; 
+  padding-bottom: 10px !important;  
+  margin-bottom: 35px !important;
+}
+
+.ant-col.text-left > .mt-2 > * {
+  order: 3 !important;
+}
+
+.ant-col.text-left .mb-3 {
+  margin-top: -80px !important;
+  margin-bottom: 15px !important;
+}
+
+.ant-col.text-left div[style*="background: linear-gradient(135deg"] {
+  position: relative !important;
+  margin-top: 20px !important;
+  z-index: 6 !important;
 }
