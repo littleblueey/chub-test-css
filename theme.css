@@ -138,6 +138,10 @@ header .ant-menu-overflow-item a[href="/"] > * {
   display: none !important;
 }
 
+header .ant-menu-overflow-item a[href="/"] {
+  position: relative;
+}
+
 header .ant-menu-overflow-item a[href="/"]::before,
 header .ant-menu-overflow-item a[href="/"]::after {
   content: '▸';
@@ -147,7 +151,6 @@ header .ant-menu-overflow-item a[href="/"]::after {
   position: absolute;
   top: 0;
   left: 0;
-  background: #000;
 }
 
 header .ant-menu-overflow-item a[href="/"]::before {
