@@ -156,8 +156,6 @@ header .ant-menu-overflow-item a[href="/"]::after {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
 }
 
 header .ant-menu-overflow-item a[href="/"]::before {
@@ -168,7 +166,6 @@ header .ant-menu-overflow-item a[href="/"]::before {
     0 0 8px #9e2b25,
     0 0 15px rgba(158, 43, 37, 0.5);
   animation: vhs-glitch-full 0.3s infinite;
-  clip-path: inset(0 0 0 0);
 }
 
 header .ant-menu-overflow-item a[href="/"]::after {
@@ -182,6 +179,8 @@ header .ant-menu-overflow-item a[href="/"]::after {
 
 /* VHS scan lines overlay */
 header .ant-menu-overflow-item a[href="/"] {
+  position: relative;
+  display: inline-block;
   background: repeating-linear-gradient(
     0deg,
     transparent 0px,
