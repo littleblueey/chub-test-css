@@ -142,17 +142,18 @@ header .ant-menu-overflow-item a[href="/"]::before {
   content: '📹';
   font-size: 36px;
   line-height: 2.1;
-  color: #ff0000;
-  animation: rec-blink 1s ease-in-out infinite;
+  animation: vhs-flicker 1.5s linear infinite;
   transition: transform 0.3s ease;
 }
 
-@keyframes rec-blink {
+@keyframes vhs-flicker {
   0%, 100% {
     opacity: 1;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7), 0 0 10px rgba(0, 255, 255, 0.7);
   }
   50% {
-    opacity: 0.2;
+    opacity: 0.8;
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.7), 0 0 10px rgba(255, 0, 0, 0.7);
   }
 }
 
